@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registered Users</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>{{ user.country }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="links">
+            <a href="{{ url_for('register') }}">Register New User</a>
+        </div>
+    </div>
+</body>
+</html>
